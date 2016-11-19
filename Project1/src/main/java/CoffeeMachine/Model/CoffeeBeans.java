@@ -42,7 +42,7 @@ public class CoffeeBeans implements Coffee {
 
     public String toString() {
         return "CoffeeBeans{" +
-                "  CoffeeType='" + coffeeType + '\'' +
+                "CoffeeType='" + coffeeType + '\'' +
                 ", pack='" + pack + '\'' +
                 ", weight=" + weight +
                 ", price=" + price +
