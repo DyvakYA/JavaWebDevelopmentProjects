@@ -10,7 +10,7 @@ package CoffeeMachine.Model;
  * @author Dyvak Yurii(dyvakyurii@gmail.com)
  * @version 1.0 15.11.2016.
  */
-class CoffeeSolubleLoader implements AbstractMethodCoffeeMaker {
+public class CoffeeSolubleLoader implements FabricMethodCoffeeMaker {
     public Coffee loadCoffee() {
         return new CoffeeSoluble();
     }

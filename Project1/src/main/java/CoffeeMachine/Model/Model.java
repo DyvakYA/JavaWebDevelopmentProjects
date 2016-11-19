@@ -16,14 +16,23 @@ import java.util.List;
  */
 public class Model {
 
-    View view = new View();
-    CoffeeBeans corn = new CoffeeBeans();
-    CoffeeJacobs coffeeJacobs = new CoffeeJacobs();
-    CoffeeSoluble coffeeSoluble = new CoffeeSoluble();
-    CoffeeTrack coffeeTrack = new CoffeeTrack();
-    AbstractMethodCoffeeMaker maker;
+    View view;
+    CoffeeBeans beans;
+    CoffeeTrack coffeeTrack ;
+    CoffeeJacobs coffeeJacobs;
+    CoffeeSoluble coffeeSoluble;
+    FabricMethodCoffeeMaker maker;
     Coffee coffee;
-    List<Coffee> coffeeCollection = new ArrayList<>();
+    List<Coffee> coffeeCollection;
+
+    public Model() {
+        coffeeCollection = new ArrayList<>();
+        view = new View();
+        beans = new CoffeeBeans();
+        coffeeTrack = new CoffeeTrack();
+        coffeeJacobs = new CoffeeJacobs();
+        coffeeSoluble = new CoffeeSoluble();
+    }
 
     /**
      * List of input coffee type
@@ -33,16 +42,18 @@ public class Model {
      */
     public List<Coffee> Coffee() {
 
-        CoffeeMaker("CornCoffee");
-        CoffeeMaker("SolubleCoffee");
-        CoffeeMaker("JacobsCoffee");
-        CoffeeMaker("JacobsCoffee");
-        CoffeeMaker("CornCoffee");
-        CoffeeMaker("CornCoffee");
-        CoffeeMaker("JacobsCoffee");
-        CoffeeMaker("SolubleCoffee");
-        CoffeeMaker("SolubleCoffee");
-        CoffeeMaker("JacobsCoffee");
+        CoffeeMaker("CoffeeBeans");
+        CoffeeMaker("CoffeeSoluble");
+        CoffeeMaker("CoffeeJacobs");
+        CoffeeMaker("CoffeeJacobs");
+        CoffeeMaker("CoffeeBeans");
+        CoffeeMaker("CoffeeBeans");
+        CoffeeMaker("CoffeeJacobs");
+
+        //Price limit
+        CoffeeMaker("CoffeeSoluble");
+        CoffeeMaker("CoffeeSoluble");
+        CoffeeMaker("CoffeeJacobs");
 
         view.printMessage(view.SEPARATOR +
                 view.COMMON_LIST +
@@ -70,7 +81,7 @@ public class Model {
     /**
      * Method for checking of price limits from CoffeeTrack class
      */
-    private void checkPriceLimit() {
+    public void checkPriceLimit() {
 
         double priceValue = coffeeTrack.getTotalPrice() + coffee.getPrice();
         double weightValue = coffeeTrack.getTotalWeight() + coffee.getWeight();
@@ -114,9 +125,9 @@ public class Model {
      * @return object in collection
      */
     // The Program logic
-    public AbstractMethodCoffeeMaker getCoffeeByCoffeeType(String maker) {
+    public FabricMethodCoffeeMaker getCoffeeByCoffeeType(String maker) {
 
-        if(maker.equals(corn.getCoffeeType())) {
+        if(maker.equals(beans.getCoffeeType())) {
             return new CoffeeBeansLoader();
         }
         else if (maker.equals(coffeeSoluble.getCoffeeType())){

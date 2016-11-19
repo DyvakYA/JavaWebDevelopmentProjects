@@ -8,7 +8,7 @@ package CoffeeMachine.Model;
  * @author Dyvak Yurii(dyvakyurii@gmail.com)
  * @version 1.0 15.11.2016.
  */
-class CoffeeBeans implements Coffee {
+public class CoffeeBeans implements Coffee {
 
     private final String coffeeType = "CoffeeBeans";
     private String pack = "bank";
@@ -19,7 +19,7 @@ class CoffeeBeans implements Coffee {
     private double price = 1200.0;
 
 
-    CoffeeBeans() {
+    public CoffeeBeans() {
         weight = coffeeWeight+packWeight;
         priceWeight = price / coffeeWeight;
     }
@@ -41,8 +41,8 @@ class CoffeeBeans implements Coffee {
     }
 
     public String toString() {
-        return "CornCoffee{" +
-                ", coffeeType='" + coffeeType + '\'' +
+        return "CoffeeBeans{" +
+                "  CoffeeType='" + coffeeType + '\'' +
                 ", pack='" + pack + '\'' +
                 ", weight=" + weight +
                 ", price=" + price +

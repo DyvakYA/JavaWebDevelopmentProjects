@@ -8,9 +8,9 @@ package CoffeeMachine.Model;
  * @author Dyvak Yurii(dyvakyurii@gmail.com)
  * @version 1.0 15.11.2016.
  */
-class CoffeeSoluble implements Coffee {
+public class CoffeeSoluble implements Coffee {
 
-    private final String coffeeType = "SolubleCoffee";
+    private final String coffeeType = "CoffeeSoluble";
     private String pack = "pack";
     private double weight;
     private double priceWeight;
@@ -19,7 +19,7 @@ class CoffeeSoluble implements Coffee {
     private double price = 1500.00;
 
 
-    CoffeeSoluble() {
+    public CoffeeSoluble() {
         weight = coffeeWeight+packWeight;
         priceWeight = price / coffeeWeight;
     }
@@ -32,7 +32,6 @@ class CoffeeSoluble implements Coffee {
         return priceWeight;
     }
 
-
     public double getWeight() {
         return coffeeWeight+packWeight;
     }
@@ -42,8 +41,8 @@ class CoffeeSoluble implements Coffee {
     }
 
     public String toString() {
-        return "SolubleCoffee{" +
-                ", coffeeType='" + coffeeType + '\'' +
+        return "CoffeeSoluble{" +
+                "  CoffeeType='" + coffeeType + '\'' +
                 ", pack='" + pack + '\'' +
                 ", weight=" + weight +
                 ", price=" + price +

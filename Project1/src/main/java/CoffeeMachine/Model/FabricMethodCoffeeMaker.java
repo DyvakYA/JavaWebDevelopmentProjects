@@ -9,6 +9,6 @@ package CoffeeMachine.Model;
  * @author Dyvak Yurii(dyvakyurii@gmail.com)
  * @version 1.0 15.11.2016.
  */
-interface AbstractMethodCoffeeMaker {
+interface FabricMethodCoffeeMaker {
     Coffee loadCoffee();
 }

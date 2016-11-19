@@ -10,7 +10,7 @@ package CoffeeMachine.Model;
  */
 class CoffeeJacobs implements Coffee {
 
-    private final String coffeeType = "JacobsCoffee";
+    private final String coffeeType = "CoffeeJacobs";
     private String pack = "bank";
     private double weight;
     private double priceWeight;
@@ -41,8 +41,8 @@ class CoffeeJacobs implements Coffee {
     }
 
     public String toString() {
-        return "JacobsCoffee{" +
-                ", coffeeType='" + coffeeType + '\'' +
+        return "CoffeeJacobs{" +
+                "  CoffeeType='" + coffeeType + '\'' +
                 ", pack='" + pack + '\'' +
                 ", weight=" + weight +
                 ", price=" + price +
