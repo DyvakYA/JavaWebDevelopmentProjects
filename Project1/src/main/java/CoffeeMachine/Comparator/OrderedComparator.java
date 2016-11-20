@@ -34,12 +34,4 @@ public class OrderedComparator<T> implements Comparator<T> {
         }
         return comparator.compare(b, a);
     }
-
-    /**
-     * Transfer methods collection sorting.
-     */
-    public enum Order {
-        ASC,
-        DESC
-    }
 }

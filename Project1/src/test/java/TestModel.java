@@ -1,6 +1,12 @@
+import CoffeeMachine.Comparator.CoffeeComparator;
+import CoffeeMachine.Comparator.MultiComparator;
+import CoffeeMachine.Comparator.Order;
+import CoffeeMachine.Comparator.OrderedComparator;
 import CoffeeMachine.Model.*;
 
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by Dyvak on 17.11.2016.
@@ -25,5 +31,37 @@ public class TestModel {
         Object res = a.getCoffeeByCoffeeType("CoffeeBeans");
  //       Assert.assertTrue(res, toString());
     }
+
+    @Test
+    public void testCoffeeComparator() {
+        // Тестируемый класс
+
+        // Проверяемый метод
+        assertEquals("Difficult objects", 1, CoffeeComparator.PRICE_WEIGHT.compare(new CoffeeBeans(), new CoffeeSoluble()));
+    }
+
+    @Test
+    public void testMultiComparator() {
+        // Тестируемый класс
+        MultiComparator multiComparator= new MultiComparator();
+        // Проверяемый метод
+        assertEquals("Difficult objects", 0, multiComparator.compare(1, 5));
+    }
+
+    @Test
+    public void testMultiComparator2() {
+        MultiComparator multi = new MultiComparator();
+        int n = multi.compare(2, null);
+        assertEquals(0, n);
+    }
+
+    @Test
+    public void testOrderedComparator() {
+        OrderedComparator multi = new OrderedComparator(CoffeeComparator.PRICE_WEIGHT, Order.DESC);
+        int n = multi.compare(new CoffeeBeans(), new CoffeeSoluble());
+        assertEquals(-1, n);
+    }
+
+
 }
 

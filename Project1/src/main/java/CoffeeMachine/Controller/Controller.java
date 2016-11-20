@@ -52,7 +52,7 @@ public class Controller {
 
         //Sorting by price/weight
         Collections.sort(coffee, new MultiComparator<>(
-                new OrderedComparator<>(CoffeeComparator.PRICE_WEIGHT, OrderedComparator.Order.DESC)
+                new OrderedComparator<>(CoffeeComparator.PRICE_WEIGHT, Order.DESC)
         ));
         view.printMessage(view.SEPARATOR+view.SORT_BY_PRICE_WEIGHT+view.SEPARATOR);
 
