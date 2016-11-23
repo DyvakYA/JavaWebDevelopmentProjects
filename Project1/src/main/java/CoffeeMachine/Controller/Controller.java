@@ -22,10 +22,12 @@ public class Controller {
     // Constructor
     Model model;
     View view;
+    List coffee;
 
     public Controller(Model model, View view) {
         this.model  = model;
         this.view = view;
+        coffee = model.Coffee();
     }
 
     /**
@@ -35,23 +37,21 @@ public class Controller {
     //The Work method
     public void processUser(){
 
-        Model model = new Model();
-        List<Coffee> coffee = model.Coffee();
-
         //Filter by coffee type
-        view.printMessage(view.SEPARATOR+view.FILTER_BY_COFFEE_TYPE+view.SEPARATOR);
+//        view.printMessage(view.SEPARATOR+view.FILTER_BY_COFFEE_TYPE+view.SEPARATOR);
 //        coffee = getCoffees(coffee, CoffeePredicate.byCoffeeType("CornCoffee"));
 
         //Filter by weight
         view.printMessage(view.SEPARATOR+view.FILTER_BY_WEIGHT+view.SEPARATOR);
-        coffee = getCoffees(coffee, CoffeePredicate.byWeight(100.00, 500.00));
+        coffee = model.getCoffees(coffee, CoffeePredicate.byWeight(100.00, 175.00));
 
         //Filter by price
         view.printMessage(view.SEPARATOR+view.FILTER_BY_PRICE+view.SEPARATOR);
-        coffee = getCoffees(coffee, CoffeePredicate.byPrice(1000.00, 2000.00));
+        coffee = model.getCoffees(coffee, CoffeePredicate.byPrice(900.00, 1700.00));
 
         //Sorting by price/weight
-        Collections.sort(coffee, new MultiComparator<>(
+        Collections.sort(coffee,
+                new MultiComparator<>(
                 new OrderedComparator<>(CoffeeComparator.PRICE_WEIGHT, Order.DESC)
         ));
         view.printMessage(view.SEPARATOR+view.SORT_BY_PRICE_WEIGHT+view.SEPARATOR);
@@ -68,9 +68,4 @@ public class Controller {
      * @param predicate sets filtering options
      * @return filtered list
      */
-    private List<Coffee> getCoffees(List<Coffee> coffee, Predicate<Coffee> predicate) {
-        coffee = Filter.filter(coffee, predicate);
-        coffee.forEach(System.out::println);
-        return coffee;
-    }
 }

@@ -1,6 +1,8 @@
 package CoffeeMachine.Model;
 
 import CoffeeMachine.Controller.CoffeeTrack;
+import CoffeeMachine.Filter.Filter;
+import CoffeeMachine.Filter.Predicate;
 import CoffeeMachine.View;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,19 +21,14 @@ public class Model {
     View view;
     CoffeeBeans beans;
     CoffeeTrack coffeeTrack ;
-    CoffeeJacobs coffeeJacobs;
-    CoffeeSoluble coffeeSoluble;
-    FabricMethodCoffeeMaker maker;
     Coffee coffee;
     List<Coffee> coffeeCollection;
 
     public Model() {
-        coffeeCollection = new ArrayList<>();
         view = new View();
-        beans = new CoffeeBeans();
         coffeeTrack = new CoffeeTrack();
-        coffeeJacobs = new CoffeeJacobs();
-        coffeeSoluble = new CoffeeSoluble();
+        coffeeCollection = new ArrayList<>();
+
     }
 
     /**
@@ -42,18 +39,26 @@ public class Model {
      */
     public List<Coffee> Coffee() {
 
-        CoffeeMaker("CoffeeBeans");
-        CoffeeMaker("CoffeeSoluble");
-        CoffeeMaker("CoffeeJacobs");
-        CoffeeMaker("CoffeeJacobs");
-        CoffeeMaker("CoffeeBeans");
-        CoffeeMaker("CoffeeBeans");
-        CoffeeMaker("CoffeeJacobs");
+        create(new CoffeeBeans("Best", Pack.PACK, 150.00, 38.0, 1500.0));
+        create(new CoffeeBeans("West", Pack.BANK, 140.00, 34.0, 1800.0));
+        create(new CoffeeBeans("Dest", Pack.PACK, 135.00, 35.0, 1000.0));
+        create(new CoffeeBeans("Fest", Pack.PACK, 130.00, 34.0, 1500.0));
+        create(new CoffeeBeans("Vest", Pack.BANK, 120.00, 34.0, 1400.0));
+        create(new CoffeeBeans("Nest", Pack.PACK, 110.00, 38.0, 1300.0));
 
-        //Price limit
-        CoffeeMaker("CoffeeSoluble");
-        CoffeeMaker("CoffeeSoluble");
-        CoffeeMaker("CoffeeJacobs");
+        create(new CoffeeBeans("Mest", Pack.NO_PACK, 190.00, 35.0, 1500.0));
+        create(new CoffeeBeans("Xest", Pack.BANK, 1500.00, 30.0, 1700.0));
+        create(new CoffeeBeans("Sest", Pack.PACK, 140.00, 38.0, 1800.0));
+        create(new CoffeeBeans("Jest", Pack.BANK, 112.00, 30.0, 1900.0));
+        create(new CoffeeBeans("Lest", Pack.NO_PACK, 1600.00, 38.0, 1700.0));
+        create(new CoffeeBeans("Mest", Pack.BANK, 190.00, 35.0, 1900.0));
+
+        create(new CoffeeBeans("Kest", Pack.NO_PACK, 19000.00, 35.0, 1100.0));
+        create(new CoffeeBeans("Kest", Pack.NO_PACK, 190.00, 35.0, 1100.0));
+
+        create(new CoffeeBeans("Pest", Pack.PACK, 190.00, 35.0, 1100.0));
+        create(new CoffeeBeans("Gest", Pack.NO_PACK, 190.00, 30.0, 1000.0));
+
 
         view.printMessage(view.SEPARATOR +
                 view.COMMON_LIST +
@@ -66,29 +71,22 @@ public class Model {
         return coffeeCollection;
     }
 
-    /**
-     * Class to create objects in the collection.
-     * Pass a parameter coffeeType by which an object is created.
-     * @param coffeeType determine the type of object being created
-     */
-    private void CoffeeMaker(String coffeeType) {
-        maker = getCoffeeByCoffeeType(coffeeType);
-        coffee = maker.loadCoffee();
-        // Enables checking of limits in the class CoffeeTrack
-        checkPriceLimit();
+    void create(CoffeeBeans coffee){
+        checkPriceLimit(coffee);
     }
+
 
     /**
      * Method for checking of price limits from CoffeeTrack class
      */
-    public void checkPriceLimit() {
+    public void checkPriceLimit(Coffee coffee) {
 
         double priceValue = coffeeTrack.getTotalPrice() + coffee.getPrice();
-        double weightValue = coffeeTrack.getTotalWeight() + coffee.getWeight();
+
 
         if (priceValue < coffeeTrack.getPriceLimit()) {
             // Enables checking of limits of weight in the class CoffeeTrack
-            checkWeightLimit(priceValue, weightValue);
+            checkWeightLimit(coffee, priceValue);
         }else{
            view.printMessage(view.SEPARATOR +
                    view.TOTAL_PRICE_LIMIT +
@@ -102,9 +100,13 @@ public class Model {
     /**
      * Method for checking of weights limits from CoffeeTrack class
      */
-    private void checkWeightLimit(double priceValue, double weightValue) {
+    private void checkWeightLimit(Coffee coffee, double priceValue) {
+
+        double weightValue = coffeeTrack.getTotalWeight() + coffee.getWeight();
+
         if(weightValue < coffeeTrack.getWeightLimit()) {
             coffeeCollection.add(coffee);
+
             coffeeTrack.setTotalPrice(priceValue);
             coffeeTrack.setTotalWeight(weightValue);
         }else{
@@ -117,26 +119,10 @@ public class Model {
         }
     }
 
-    /**
-     * Method of creating objects
-     * Check what parameter enter user and create
-     * object of this parameter
-     * @param maker user parameter for create object
-     * @return object in collection
-     */
-    // The Program logic
-    public FabricMethodCoffeeMaker getCoffeeByCoffeeType(String maker) {
-
-        if(maker.equals(beans.getCoffeeType())) {
-            return new CoffeeBeansLoader();
-        }
-        else if (maker.equals(coffeeSoluble.getCoffeeType())){
-            return new CoffeeSolubleLoader();
-        }
-        else if (maker.equals(coffeeJacobs.getCoffeeType())){
-            return new CoffeeJacobsLoader();
-        }
-        throw new RuntimeException(view.UNSUPPORTED + maker);
+    public List<Coffee> getCoffees(List<Coffee> coffee, Predicate<Coffee> predicate) {
+        coffee = Filter.filter(coffee, predicate);
+        coffee.forEach(System.out::println);
+        return coffee;
     }
 }
 

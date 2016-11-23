@@ -10,16 +10,20 @@ package CoffeeMachine.Model;
  */
 public class CoffeeBeans implements Coffee {
 
-    private final String coffeeType = "CoffeeBeans";
-    private String pack = "bank";
+    private String coffeeType;
+    private Pack pack;
     private double weight;
     private double priceWeight;
-    private double coffeeWeight = 200.00;
-    private double packWeight = 30.00;
-    private double price = 1200.0;
+    private double coffeeWeight;
+    private double packWeight;
+    private double price;
 
-
-    public CoffeeBeans() {
+    public CoffeeBeans(String coffeeType, Pack pack, double coffeeWeight, double packWeight, double price) {
+        this.coffeeType = coffeeType;
+        this.pack = pack;
+        this.coffeeWeight = coffeeWeight;
+        this.packWeight = packWeight;
+        this.price = price;
         weight = coffeeWeight+packWeight;
         priceWeight = price / coffeeWeight;
     }
