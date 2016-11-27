@@ -1,13 +1,13 @@
-package CoffeeMachine.Comparator;
+package coffeeMachine.comparator;
 
-import CoffeeMachine.Model.Coffee;
+import coffeeMachine.model.Coffee;
 
 import java.util.Comparator;
 
 /**
  * CoffeeComparator.java
  * <p>
- * Comparator to sort the list in terms of price and weight.
+ * comparator to sort the list in terms of price and weight.
  *
  * @author Dyvak Yurii(dyvakyurii@gmail.com)
  * @version 1.0 15.11.2016.

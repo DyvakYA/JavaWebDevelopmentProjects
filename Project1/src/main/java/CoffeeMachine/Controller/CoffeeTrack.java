@@ -1,4 +1,4 @@
-package CoffeeMachine.Controller;
+package coffeeMachine.controller;
 
 /**
  * CoffeeTrack.java

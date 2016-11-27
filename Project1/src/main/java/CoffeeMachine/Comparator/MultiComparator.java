@@ -1,4 +1,4 @@
-package CoffeeMachine.Comparator;
+package coffeeMachine.comparator;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * MultiComparator.java
  * <p>
- * generalized class MultiComparator implements class Comparator for
+ * generalized class MultiComparator implements class comparator for
  * returns a fixed-size list backed by the specified array.
  * And check not 0.
  *

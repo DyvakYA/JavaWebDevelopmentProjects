@@ -1,9 +1,9 @@
-package CoffeeMachine.Model;
+package coffeeMachine.model;
 
-import CoffeeMachine.Controller.CoffeeTrack;
-import CoffeeMachine.Filter.Filter;
-import CoffeeMachine.Filter.Predicate;
-import CoffeeMachine.View;
+import coffeeMachine.controller.CoffeeTrack;
+import coffeeMachine.filter.Filter;
+import coffeeMachine.filter.Predicate;
+import coffeeMachine.View;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +11,7 @@ import java.util.List;
  * Main.java
  * <p>
  * Start point of the input data.
- * Here we will start controller {@link CoffeeMachine.Controller.Controller}
+ * Here we will start controller {@link coffeeMachine.controller.Controller}
  *
  * @author Dyvak Yurii(dyvakyurii@gmail.com)
  * @version 1.0 15.11.2016.

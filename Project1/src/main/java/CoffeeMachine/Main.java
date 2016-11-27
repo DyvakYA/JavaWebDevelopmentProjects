@@ -1,7 +1,7 @@
-package CoffeeMachine;
+package coffeeMachine;
 
-import CoffeeMachine.Controller.Controller;
-import CoffeeMachine.Model.Model;
+import coffeeMachine.controller.Controller;
+import coffeeMachine.model.Model;
 
 /**
  * Main.java

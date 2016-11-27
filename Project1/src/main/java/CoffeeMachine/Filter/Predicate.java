@@ -1,4 +1,4 @@
-package CoffeeMachine.Filter;
+package coffeeMachine.filter;
 
 /**
  * Predicate.java

@@ -1,4 +1,4 @@
-package CoffeeMachine;
+package coffeeMachine;
 
 /**
  * View.java
@@ -14,15 +14,15 @@ public class View {
     /**
      * Enable a filter by coffee type
      */
-    public final String FILTER_BY_COFFEE_TYPE = "Filter by coffee type";
+    public final String FILTER_BY_COFFEE_TYPE = "filter by coffee type";
     /**
      * Enable a filter by weight
      */
-    public final String FILTER_BY_WEIGHT = "Filter by weight";
+    public final String FILTER_BY_WEIGHT = "filter by weight";
     /**
      * Enable a filter by price
      */
-    public final String FILTER_BY_PRICE = "Filter by price";
+    public final String FILTER_BY_PRICE = "filter by price";
     /**
      * Show common list of object in collection, list before sorting and filtering
      */

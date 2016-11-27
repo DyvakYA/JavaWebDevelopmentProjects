@@ -1,11 +1,11 @@
-package CoffeeMachine.Comparator;
+package coffeeMachine.comparator;
 
 import java.util.Comparator;
 
 /**
  * OrderedComparator.java
  * <p>
- * Generalized class OrderedComparator implements class Comparator for
+ * Generalized class OrderedComparator implements class comparator for
  * determining the direction of the sort ASC or DESC
  *
  * @author Dyvak Yurii(dyvakyurii@gmail.com)

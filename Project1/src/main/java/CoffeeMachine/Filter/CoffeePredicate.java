@@ -1,6 +1,6 @@
-package CoffeeMachine.Filter;
+package coffeeMachine.filter;
 
-import CoffeeMachine.Model.Coffee;
+import coffeeMachine.model.Coffee;
 import java.util.Objects;
 
 /**

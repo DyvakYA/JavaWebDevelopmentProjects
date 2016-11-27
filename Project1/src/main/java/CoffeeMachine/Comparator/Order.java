@@ -1,4 +1,4 @@
-package CoffeeMachine.Comparator;
+package coffeeMachine.comparator;
 
 /**
  * Created by Dyvak on 20.11.2016.

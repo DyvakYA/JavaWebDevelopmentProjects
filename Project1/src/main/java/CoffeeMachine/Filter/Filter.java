@@ -1,12 +1,12 @@
-package CoffeeMachine.Filter;
+package coffeeMachine.filter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Filter.java
+ * filter.java
  * <p>
- * generalized class Filter
+ * generalized class filter
  * receives a list and a predicate for
  * which the filter list
  *

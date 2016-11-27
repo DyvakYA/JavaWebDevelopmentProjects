@@ -1,8 +1,8 @@
-import CoffeeMachine.Comparator.CoffeeComparator;
-import CoffeeMachine.Comparator.MultiComparator;
-import CoffeeMachine.Comparator.Order;
-import CoffeeMachine.Comparator.OrderedComparator;
-import CoffeeMachine.Model.*;
+import coffeeMachine.comparator.CoffeeComparator;
+import coffeeMachine.comparator.MultiComparator;
+import coffeeMachine.comparator.Order;
+import coffeeMachine.comparator.OrderedComparator;
+import coffeeMachine.model.*;
 
 import org.junit.Test;
 

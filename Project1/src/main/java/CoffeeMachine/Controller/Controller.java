@@ -1,9 +1,9 @@
-package CoffeeMachine.Controller;
+package coffeeMachine.controller;
 
-import CoffeeMachine.Comparator.*;
-import CoffeeMachine.Filter.*;
-import CoffeeMachine.Model.*;
-import CoffeeMachine.View;
+import coffeeMachine.comparator.*;
+import coffeeMachine.filter.*;
+import coffeeMachine.model.*;
+import coffeeMachine.View;
 
 import java.util.Collections;
 import java.util.List;
@@ -37,15 +37,15 @@ public class Controller {
     //The Work method
     public void processUser(){
 
-        //Filter by coffee type
+        //filter by coffee type
 //        view.printMessage(view.SEPARATOR+view.FILTER_BY_COFFEE_TYPE+view.SEPARATOR);
 //        coffee = getCoffees(coffee, CoffeePredicate.byCoffeeType("CornCoffee"));
 
-        //Filter by weight
+        //filter by weight
         view.printMessage(view.SEPARATOR+view.FILTER_BY_WEIGHT+view.SEPARATOR);
         coffee = model.getCoffees(coffee, CoffeePredicate.byWeight(100.00, 175.00));
 
-        //Filter by price
+        //filter by price
         view.printMessage(view.SEPARATOR+view.FILTER_BY_PRICE+view.SEPARATOR);
         coffee = model.getCoffees(coffee, CoffeePredicate.byPrice(900.00, 1700.00));
 

@@ -1,4 +1,4 @@
-package CoffeeMachine.Model;
+package coffeeMachine.model;
 
 /**
  * Coffee.java
