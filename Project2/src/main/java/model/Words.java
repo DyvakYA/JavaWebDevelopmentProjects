@@ -1,9 +1,12 @@
-package main.java.model;
-
-import java.util.Arrays;
-
+package model;
 /**
- * Created by Dyvak on 03.12.2016.
+ * Words.java
+ * <p>
+ * there we store a key words for finding code or tags
+ * or something else
+ *
+ * @author Dyvak Yurii(dyvakyurii@gmail.com)
+ * @version 1.0 03.12.2016.
  */
 public enum Words {
 
@@ -20,26 +23,6 @@ public enum Words {
 
     public String[] getSymbols() {
         return symbols;
-    }
-
-    /**
-     * @param input input code word name
-     * @return a defined group of code word
-     */
-    public static Words defineGroup(String input) {
-        for (Words codeGroup : Words.values()) {
-            if (codeGroup.getSymbols().length > 0 && Arrays.asList(codeGroup.getSymbols()).contains(input)) {
-                return codeGroup;
-            }
-        }
-        return DEFAULT;
-    }
-
-    /**
-     * checks if input word is reserved
-     */
-    public static boolean isReserved(String input) {
-        return Arrays.asList(RESERVED.getSymbols()).contains(input);
     }
 
     @Override

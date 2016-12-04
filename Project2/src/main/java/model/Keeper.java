@@ -1,12 +1,17 @@
-package main.java.model;
+package model;
 
 import java.util.*;
 
-import main.java.view.View;
-
-
+import view.View;
 /**
- * Created by Dyvak on 03.12.2016.
+ * Keeper.java
+ * <p>
+ * its wary important class because we
+ * keep there lists of words and code words
+ * and treat our lists
+ *
+ * @author Dyvak Yurii(dyvakyurii@gmail.com)
+ * @version 1.0 03.12.2016.
  */
 public class Keeper {
     private View view;
@@ -16,11 +21,17 @@ public class Keeper {
     public Keeper(){
         view = new View();
     }
-
+    /**
+     * method for adding word in word list
+     * @param word value for adding
+     */
     public void addWords(String word) {
         words.add(word);
     }
-
+    /**
+     * method for adding code word in code list
+     * @param word value for adding
+     */
     public void addCode(String word) {
         code.add(word);
     }
@@ -32,7 +43,9 @@ public class Keeper {
     public List<String> getCode() {
         return code;
     }
-
+    /**
+     * method for sorting list
+     */
     public void outputSortedWords(){
 
         view.printMsg(view.SORTING);
@@ -44,7 +57,9 @@ public class Keeper {
         });
         System.out.println(words);
     }
-
+    /**
+     * method for count how many times repeat word n list
+     */
     public void repeatWords() {
         view.printMsg(view.REPEATS);
         Map<String, Integer> map = new HashMap<>();
@@ -59,11 +74,12 @@ public class Keeper {
         //TreeMap<Integer, List<Integer>>
         System.out.println(map);
     }
-
-    public void deleteTegs() {
+    /**
+     * method for deleting tars from list
+     */
+    public void deleteTags() {
         view.printMsg(view.TAGS_DEL);
         for (int i = 0; i<words.size();i++){
-
             for (String tag : Words.TAGS.getSymbols()) {
                 String val = words.get(i);
                 if (val.equals(tag)) {
@@ -74,7 +90,10 @@ public class Keeper {
         }
         System.out.println(words);
     }
-
+    /**
+     * method for adding code words in code list
+     * and deleting code words from word list
+     */
     public void codeList() {
         view.printMsg(view.CODE);
         for (int i = 0; i<words.size();i++){

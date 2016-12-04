@@ -1,14 +1,21 @@
-package main.java.loader;
+package loader;
 
-import main.java.model.Configs;
+import model.Configs;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-
+/**
+ * TextReader.java
+ * <p>
+ * Special class for reading information from file
+ *
+ * @author Dyvak Yurii(dyvakyurii@gmail.com)
+ * @version 1.0 03.12.2016.
+ */
 public class TextReader {
 
-    public static String readFile() {
+    public String readFile() {
         try {
             byte[] encoded = Files.readAllBytes(Paths.get(Configs.FILE_INPUT));
             return new String(encoded, Configs.DEFAULT_ENCODING);

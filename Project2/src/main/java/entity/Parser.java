@@ -1,4 +1,4 @@
-package main.java.entity;
+package entity;
 
 public interface Parser {
    void parsing(String text);

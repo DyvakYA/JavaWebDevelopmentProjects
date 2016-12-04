@@ -1,19 +1,31 @@
-package main.java.util;
+package util;
 
-import main.java.entity.Parser;
-import main.java.entity.ParsingComposite;
-import main.java.manager.RegexManager;
-import main.java.model.Keeper;
-import main.java.view.View;
+import entity.Parser;
+import entity.ParsingComposite;
+import manager.RegexManager;
+import model.Keeper;
+import view.View;
 
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+/**
+ * SentenceParser.java
+ * <p>
+ * Parser for sentences
+ *
+ * @author Dyvak Yurii(dyvakyurii@gmail.com)
+ * @version 1.0 03.12.2016.
+ */
 public class SentenceParser implements Parser{
 
     static final Logger LOG = Logger.getLogger(String.valueOf(SentenceParser.class));
-
+    /**
+     * special method for parsing input text.
+     * @param text text for parsing, was read from file.
+     * instance two part, parsing words
+     * and parsing symbols of punctuation.
+     */
     @Override
     public void parsing(String text) {
         View.printMsg(View.SENTENCE_PARSER);

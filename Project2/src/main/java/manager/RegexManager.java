@@ -1,10 +1,16 @@
-package main.java.manager;
-
+package manager;
 
 import java.io.*;
 import java.util.Properties;
-
-
+/**
+ * RegexManager.java
+ * <p>
+ * In this class we set rules for parsing
+ * get this rules from properties
+ *
+ * @author Dyvak Yurii(dyvakyurii@gmail.com)
+ * @version 1.0 03.12.2016.
+ */
 public class RegexManager {
 
     public static final String REGEX_PARAGRAPH;

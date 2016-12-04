@@ -1,8 +1,12 @@
-package main.java.model;
-
-
+package model;
 /**
- * Created by Dyvak on 03.12.2016.
+ * Configs.java
+ * <p>
+ * Information about writing and
+ * reading files. And type of codification.
+ *
+ * @author Dyvak Yurii(dyvakyurii@gmail.com)
+ * @version 1.0 03.12.2016.
  */
 public interface Configs {
 

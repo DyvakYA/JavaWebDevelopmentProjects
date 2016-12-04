@@ -1,8 +1,15 @@
-package main.java.loader;
+package loader;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-
+/**
+ * TextWriter.java
+ * <p>
+ * Special class for writing information from file
+ *
+ * @author Dyvak Yurii(dyvakyurii@gmail.com)
+ * @version 1.0 03.12.2016.
+ */
 public class TextWriter {
 
     public void writeText(String text, String path) {
