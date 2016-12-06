@@ -2,6 +2,7 @@ package entity;
 
 import java.util.ArrayList;
 import java.util.List;
+
 /**
  * ParsingComposite.java
  * <p>
@@ -12,29 +13,29 @@ import java.util.List;
  * @author Dyvak Yurii(dyvakyurii@gmail.com)
  * @version 1.0 03.12.2016.
  */
-public class ParsingComposite implements Parser {
+public class TextComposite implements TextComponent {
     /**
      * List for components, parsings.
      */
-    private List<Parser> components;
+    private List<TextComponent> components;
     /**
      * List for parsing
      */
     private List<String> text;
 
-    public ParsingComposite() {
+    public TextComposite() {
         components = new ArrayList<>();
         text = new ArrayList<>();
     }
 
-    public List<Parser> getComponents() {
+    public List<TextComponent> getComponents() {
         return components;
     }
     /**
      * For add component in private list.
      * @param component type of parsing
      */
-    public void addComponent(Parser component) {
+    public void addComponent(TextComponent component) {
         components.add(component);
     }
     /**
@@ -45,7 +46,7 @@ public class ParsingComposite implements Parser {
         text.add(someText);
     }
 
-    public void removeComponent(Parser component) {
+    public void removeComponent(TextComponent component) {
         components.remove(component);
     }
 
@@ -61,7 +62,7 @@ public class ParsingComposite implements Parser {
      */
     @Override
     public void parsing(String text) {
-        for(Parser component: components){
+        for(TextComponent component: components){
             component.parsing(text);
         }
     }

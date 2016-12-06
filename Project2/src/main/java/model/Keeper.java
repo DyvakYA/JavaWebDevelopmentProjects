@@ -18,22 +18,37 @@ public class Keeper {
     private static List<String> words = new ArrayList<>();
     private static List<String> code = new ArrayList<>();
 
-    public Keeper(){
+    private static List<String> sentence = new ArrayList<>();
+
+    public Keeper() {
         view = new View();
     }
+
     /**
      * method for adding word in word list
+     *
      * @param word value for adding
      */
     public void addWords(String word) {
         words.add(word);
     }
+
     /**
      * method for adding code word in code list
+     *
      * @param word value for adding
      */
     public void addCode(String word) {
         code.add(word);
+    }
+
+    /**
+     * method for adding code word in code list
+     *
+     * @param word value for adding
+     */
+    public void addSentence(String word) {
+        sentence.add(word);
     }
 
     public List<String> getWords() {
@@ -43,10 +58,11 @@ public class Keeper {
     public List<String> getCode() {
         return code;
     }
+
     /**
      * method for sorting list
      */
-    public void outputSortedWords(){
+    public void outputSortedWords() {
 
         view.printMsg(view.SORTING);
         Collections.sort(words, new Comparator<String>() {
@@ -57,6 +73,7 @@ public class Keeper {
         });
         System.out.println(words);
     }
+
     /**
      * method for count how many times repeat word n list
      */
@@ -74,12 +91,13 @@ public class Keeper {
         //TreeMap<Integer, List<Integer>>
         System.out.println(map);
     }
+
     /**
      * method for deleting tars from list
      */
     public void deleteTags() {
         view.printMsg(view.TAGS_DEL);
-        for (int i = 0; i<words.size();i++){
+        for (int i = 0; i < words.size(); i++) {
             for (String tag : Words.TAGS.getSymbols()) {
                 String val = words.get(i);
                 if (val.equals(tag)) {
@@ -90,13 +108,14 @@ public class Keeper {
         }
         System.out.println(words);
     }
+
     /**
      * method for adding code words in code list
      * and deleting code words from word list
      */
     public void codeList() {
         view.printMsg(view.CODE);
-        for (int i = 0; i<words.size();i++){
+        for (int i = 0; i < words.size(); i++) {
             for (String co : Words.RESERVED.getSymbols()) {
                 String val = words.get(i);
                 if (val.equals(co)) {
@@ -108,6 +127,23 @@ public class Keeper {
         }
         System.out.println(code);
     }
+
+    public void bubbleSentenceSort() {
+        view.printMsg(view.SORTING_BUBBLE);
+        String temp;
+        for (int i = 0; i < sentence.size()-1; i++) {// bubble sort outer loop
+            for (int j = 0; j < sentence.size() - i-1; j++) {
+                if (sentence.get(j).length() > sentence.get(j + 1).length()) {
+                    temp = sentence.get(j);
+                    sentence.set(j, sentence.get(j + 1));
+                    sentence.set(j + 1, temp);
+                }
+            }
+        }
+        System.out.println(sentence);
+    }
 }
+
+
 
 

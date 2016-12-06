@@ -1,5 +1,5 @@
-import entity.Parser;
-import entity.ParsingComposite;
+import entity.TextComponent;
+import entity.TextComposite;
 import loader.TextReader;
 import loader.TextWriter;
 import model.Configs;
@@ -35,9 +35,7 @@ public class Controller {
      * We can use all parsings stuffs what we set in collection.
      */
     public void processUser() {
-
         TextWriter writer = new TextWriter();
-
         String text = new TextReader().readFile();
 
         view.printMsg(view.INPUT_TEXT);
@@ -47,14 +45,14 @@ public class Controller {
          * In this case we create objects of
          * parsings what we want to us
          */
-        Parser textParser = new TextParser();
-        Parser paragraphParser = new ParagraphParser();
-        Parser sentenceParser = new SentenceParser();
-        Parser wordParser = new WordParser();
+        TextComponent textParser = new TextParser();
+        TextComponent paragraphParser = new ParagraphParser();
+        TextComponent sentenceParser = new SentenceParser();
+        TextComponent wordParser = new WordParser();
         /**
          * Create new collection for our parsings.
          */
-        ParsingComposite parsingComposite = new ParsingComposite();
+        TextComposite parsingComposite = new TextComposite();
         /**
         * Add parsings into collection parsingComposite.
         */
@@ -94,6 +92,8 @@ public class Controller {
         /**
          * write our parsing text in file.
          */
+        keeper.bubbleSentenceSort();
+
         writer.writeText(text, Configs.FILE_OUTPUT);
     }
 }

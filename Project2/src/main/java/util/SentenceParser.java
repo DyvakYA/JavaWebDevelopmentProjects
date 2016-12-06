@@ -1,7 +1,7 @@
 package util;
 
-import entity.Parser;
-import entity.ParsingComposite;
+import entity.TextComponent;
+import entity.TextComposite;
 import manager.RegexManager;
 import model.Keeper;
 import view.View;
@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
  * @author Dyvak Yurii(dyvakyurii@gmail.com)
  * @version 1.0 03.12.2016.
  */
-public class SentenceParser implements Parser{
+public class SentenceParser implements TextComponent {
 
     static final Logger LOG = Logger.getLogger(String.valueOf(SentenceParser.class));
     /**
@@ -30,7 +30,7 @@ public class SentenceParser implements Parser{
     public void parsing(String text) {
         View.printMsg(View.SENTENCE_PARSER);
         Keeper keeper = new Keeper();
-        ParsingComposite sentence = new ParsingComposite();
+        TextComposite sentence = new TextComposite();
         Pattern pattern = Pattern.compile(RegexManager.REGEX_WORD + "|" + RegexManager.REGEX_PUNCTUATION);
         Matcher matcher = pattern.matcher(text);
         while (matcher.find()) {

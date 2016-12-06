@@ -1,7 +1,6 @@
 package util;
 
-import entity.Parser;
-import entity.ParsingComposite;
+import entity.*;
 import manager.RegexManager;
 import view.View;
 
@@ -16,7 +15,7 @@ import java.util.regex.Pattern;
  * @author Dyvak Yurii(dyvakyurii@gmail.com)
  * @version 1.0 03.12.2016.
  */
-public class WordParser implements Parser{
+public class WordParser implements TextComponent{
     private static final Logger LOG = Logger.getLogger(String.valueOf(WordParser.class));
     /**
      * special method for parsing input text.
@@ -25,13 +24,13 @@ public class WordParser implements Parser{
     @Override
     public void parsing(String text) {
         View.printMsg(View.WORD_PARSER);
-        ParsingComposite word = new ParsingComposite();
+        TextComposite word = new TextComposite();
         Pattern pattern = Pattern.compile(RegexManager.REGEX_LETTER);
         Matcher matcher = pattern.matcher(text);
         while (matcher.find()) {
             String letter = matcher.group();
+            //System.out.println(letter);
             //LOG.info("Letter found: " + letter);
-            System.out.println(letter);
             word.add(letter);
         }
     }

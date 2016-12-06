@@ -22,7 +22,8 @@ public class View {
     public static final String REPEATS = "Repeats : ";
     public static final String SORTING = "All words in paragraph was sorted: ";
     public static final String CODE = "Code : ";
-    public static final String TAGS_DEL = "Without tegs : ";
+    public static final String SORTING_BUBBLE = "Sorting by size : ";
+    public static final String TAGS_DEL = "Without tags : ";
     public final String CODE_DEL = "Without code : ";
     public final String IOException = "IO Exception has occurred ! "+ Configs.FILE_INPUT;
     /**
@@ -41,5 +42,6 @@ public class View {
         for (Object i : list) {
             System.out.print(i+" ");
         }
+        System.out.println();
     }
 }
