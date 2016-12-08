@@ -1,11 +1,11 @@
-import entity.TextComponent;
+import entity.ComponentType;
 import entity.TextComposite;
 import loader.TextReader;
 import loader.TextWriter;
-import model.Configs;
-import model.Keeper;
-import util.*;
+import entity.Configs;
+import util.TextParser;
 import view.View;
+
 /**
  * Controller.java
  * <p>
@@ -19,12 +19,10 @@ import view.View;
 public class Controller {
 
     View view;
-    Keeper keeper;
 
     // Constructor
     public Controller( View view) {
         this.view = view;
-        keeper = new Keeper();
     }
 
     /**
@@ -38,64 +36,21 @@ public class Controller {
         TextWriter writer = new TextWriter();
         String text = new TextReader().readFile();
 
-        view.printMsg(view.INPUT_TEXT);
-        System.out.println(text);
+        TextComposite textComposite = TextParser.parseText(text);
 
-        /**
-         * In this case we create objects of
-         * parsings what we want to us
-         */
-        TextComponent textParser = new TextParser();
-        TextComponent paragraphParser = new ParagraphParser();
-        TextComponent sentenceParser = new SentenceParser();
-        TextComponent wordParser = new WordParser();
-        /**
-         * Create new collection for our parsings.
-         */
-        TextComposite parsingComposite = new TextComposite();
-        /**
-        * Add parsings into collection parsingComposite.
-        */
-        parsingComposite.addComponent(textParser);
-        parsingComposite.addComponent(paragraphParser);
-        parsingComposite.addComponent(sentenceParser);
-        parsingComposite.addComponent(wordParser);
-        /**
-         * launching method parsing() of all elements of collection.
-         */
-        parsingComposite.parsing(text);
-        /**
-         * count all repeats of words in parsing text.
-         */
-        keeper.repeatWords();
-        /**
-         * make sorting of all words in word collection.
-         */
-        keeper.outputSortedWords();
-        /**
-         * delete tags in text, tags we get from enam Words.
-         */
-        keeper.deleteTags();
-        /**
-         * make list for code words in parsing text.
-         */
-        keeper.codeList();
-        /**
-         * print message
-         */
-        view.printMsg(view.CODE_DEL);
-        /**
-         * print all elements of collection
-         * without words of code
-         */
-        view.printAll(keeper.getWords());
-        /**
-         * write our parsing text in file.
-         */
-        keeper.bubbleSentenceSort();
+        System.out.println(textComposite);
+
+        TextComposite composite = new TextComposite();
+
+        System.out.println("------------------------------------------------------");
+
+        String constructedText = composite.appendParts();
+        System.out.println(constructedText);
 
         writer.writeText(text, Configs.FILE_OUTPUT);
     }
+
+
 }
 
 

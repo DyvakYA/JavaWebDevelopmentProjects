@@ -14,56 +14,54 @@ import java.util.List;
  * @version 1.0 03.12.2016.
  */
 public class TextComposite implements TextComponent {
-    /**
-     * List for components, parsings.
-     */
+
+    private ComponentType Type;
     private List<TextComponent> components;
-    /**
-     * List for parsing
-     */
-    private List<String> text;
 
-    public TextComposite() {
-        components = new ArrayList<>();
-        text = new ArrayList<>();
+    public TextComposite(){
+        components = new ArrayList();
     }
 
-    public List<TextComponent> getComponents() {
-        return components;
-    }
-    /**
-     * For add component in private list.
-     * @param component type of parsing
-     */
-    public void addComponent(TextComponent component) {
+    @Override
+    public void add(TextComponent component) {
         components.add(component);
     }
-    /**
-     * metod for all types of parsing
-     * @param someText text add in list
-     */
-    public void add(String someText){
-        text.add(someText);
-    }
 
-    public void removeComponent(TextComponent component) {
-        components.remove(component);
+    @Override
+    public List<TextComponent> getComponents() {
+        return components;
     }
 
     @Override
     public String toString() {
-        return "Parser{" +
+        return "TextComposite{" +
+                "Type=" + Type +
                 ", components=" + components +
                 '}';
     }
-    /**
-     * method for start method parsing of all components in collection
-     * @param text input text for parsing
-     */
+
     @Override
-    public void parsing(String text) {
-        for(TextComponent component: components){
-            component.parsing(text);
+    public ComponentType getTextType() {
+        return Type;
+    }
+
+    public void setType(ComponentType type){
+        this.Type = type;
+    }
+
+    @Override
+    public String appendParts() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (TextComponent component : components) {
+            stringBuilder.append(component.appendParts());
+            if (component.getTextType().toString().equals(ComponentType.WORD.toString())) {
+                stringBuilder.append(' ');
+            } else if (component.getTextType().toString().equals(ComponentType.SENTENCE.toString())) {
+                stringBuilder.append("\n\n");
+            }
+            System.out.println(stringBuilder);
         }
+
+        return stringBuilder.toString();
     }
 }

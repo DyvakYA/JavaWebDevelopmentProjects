@@ -1,5 +1,14 @@
 package entity;
 
+import java.util.List;
+
 public interface TextComponent {
-    void parsing(String text);
+
+    void add(TextComponent component);
+
+    List<TextComponent> getComponents();
+
+    ComponentType getTextType();
+
+    String appendParts();
 }

@@ -1,6 +1,6 @@
 package loader;
 
-import model.Configs;
+import entity.Configs;
 
 import java.io.IOException;
 import java.nio.file.Files;

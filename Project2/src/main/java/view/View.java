@@ -1,6 +1,6 @@
 package view;
 
-import model.Configs;
+import entity.Configs;
 
 import java.util.List;
 /**
