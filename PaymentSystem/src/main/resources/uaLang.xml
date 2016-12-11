@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<lang>
+    <meta>
+        <pageTitle>Акаунт</pageTitle>
+    </meta>
+    <body>
+        <headerMenu>
+            <main>Додому</main>
+            <about>Про нас</about>
+            <logOut>Вийти</logOut>
+            <logIn>Зайти</logIn>
+        </headerMenu>
+        <bannerTitle>Платіжна система</bannerTitle>
+        <midleLeftMenu>
+            <getUserList>Переглянути список користувачів</getUserList>
+            <myInfo>Моя інформація</myInfo>
+            <test>Тест</test>
+        </midleLeftMenu>
+        <bottomMenu>
+            <test>Тест</test>
+        </bottomMenu>
+        <accountPage>
+            <langCurrent>ua</langCurrent>
+            <langButtonTitle>Поміняти мову</langButtonTitle>
+            <wellcome>Ласкаво просимо</wellcome>
+            <roleA>Адмін</roleA>
+            <roleU>Користувач</roleU>
+            <email>Ваш поштова адреса</email>
+            <accNum>Номер акаунту</accNum>
+            <accVal>Баланс рахунку</accVal>
+            <accStatus>Статус акаунту</accStatus>
+            <userList>Список користувачів</userList>
+        </accountPage>
+        <userPage>
+            <user>Користувач</user>
+            <accStatusValue>
+                <active>Активний</active>
+                <disactive>Не активний</disactive>
+            </accStatusValue>
+            <accStatusButt>Не активний</accStatusButt>
+        </userPage>
+    </body>
+</lang>

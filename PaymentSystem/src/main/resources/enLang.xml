@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<lang>
+    <meta>
+        <pageTitle>Account</pageTitle>
+    </meta>
+    <body>
+        <headerMenu>
+            <main>Home</main>
+            <about>About</about>
+            <logOut>Log Out</logOut>
+            <logIn>Log In</logIn>
+        </headerMenu>
+        <bannerTitle>Payment System</bannerTitle>
+        <midleLeftMenu>
+            <getUserList>Get user list</getUserList>
+            <myInfo>My info</myInfo>
+            <test>Test</test>
+        </midleLeftMenu>
+        <bottomMenu>
+            <test>Test</test>
+        </bottomMenu>
+        <accountPage>
+            <langCurrent>en</langCurrent>
+            <langButtonTitle>Change Language</langButtonTitle>
+            <wellcome>Wellcome</wellcome>
+            <roleA>Admin</roleA>
+            <roleU>User</roleU>
+            <email>Your email</email>
+            <accNum>Account number</accNum>
+            <accVal>Account value</accVal>
+            <accStatus>Account status</accStatus>
+            <userList>User list</userList>
+        </accountPage>
+        <userPage>
+            <user>User</user>
+            <accStatusValue>
+                <active>Active</active>
+                <disactive>Disactive</disactive>
+            </accStatusValue>
+            <accStatusButt>Disactive</accStatusButt>
+        </userPage>
+    </body>
+</lang>

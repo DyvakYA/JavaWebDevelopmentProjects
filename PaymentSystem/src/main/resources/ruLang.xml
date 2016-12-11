@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<lang>
+    <meta>
+        <pageTitle>Акаунт</pageTitle>
+    </meta>
+    <body>
+        <headerMenu>
+            <main>Домой</main>
+            <about>Про нас</about>
+            <logOut>Выйти</logOut>
+            <logIn>Войти</logIn>
+        </headerMenu>
+        <bannerTitle>Платёжная система</bannerTitle>
+        <midleLeftMenu>
+            <getUserList>Список пользователей</getUserList>
+            <myInfo>Моя информация</myInfo>
+            <test>Тест</test>
+        </midleLeftMenu>
+        <bottomMenu>
+            <test>Тест</test>
+        </bottomMenu>
+        <accountPage>
+            <langCurrent>ru</langCurrent>
+            <langButtonTitle>Поменять язык</langButtonTitle>
+            <wellcome>Добро пожаловать</wellcome>
+            <roleA>Админ</roleA>
+            <roleU>Пользователь</roleU>
+            <email>Ваш почтовый адрес</email>
+            <accNum>Номер счёта</accNum>
+            <accVal>Баланс счёта</accVal>
+            <accStatus>Статус счёта</accStatus>
+            <userList>Список пользователей</userList>
+        </accountPage>
+        <userPage>
+            <user>Пользователь</user>
+            <accStatusValue>
+                <active>Активный</active>
+                <disactive>Не активный</disactive>
+            </accStatusValue>
+            <accStatusButt>Не активный</accStatusButt>
+        </userPage>
+    </body>
+</lang>
