@@ -1,10 +1,10 @@
-package web.lang;
+package com.dyvak.web.lang;
 
 /**
  * Created by Dyvak on 11.12.2016.
  */
 
-import web.controller.Controller;
+import com.dyvak.web.controller.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
