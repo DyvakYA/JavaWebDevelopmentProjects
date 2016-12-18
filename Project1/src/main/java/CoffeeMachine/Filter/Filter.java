@@ -15,9 +15,11 @@ import java.util.List;
  */
 public final class Filter {
 
-        private Filter() {}
+    private Filter() {
+    }
 
-        public static <T> List<T> filter(List<T> values, Predicate<T> predicate) {
+    public static <T> List<T> filter(List<T> values, Predicate<T> predicate) {
+
             List<T> result = new ArrayList<T>();
 
             for (T value : values) {
